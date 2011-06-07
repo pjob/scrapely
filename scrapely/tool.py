@@ -1,6 +1,11 @@
 from __future__ import with_statement
-import sys, os, re, cmd, shlex, json, optparse, json, urllib, pprint
+import sys, os, re, cmd, shlex, optparse, urllib, pprint
 from cStringIO import StringIO
+
+try:
+    import simplejson as json
+except ImportError:
+    import json
 
 from scrapely.htmlpage import HtmlPage, page_to_dict
 from scrapely.template import TemplateMaker, best_match
